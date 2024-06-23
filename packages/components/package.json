@@ -1,0 +1,33 @@
+{
+  "name": "@dong-ui/components",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "dist/es/index.js",
+  "types": "dist/es/index.d.ts",
+  "scripts": {
+    "dev": "vite",
+    "prebuild": "rimraf dist",
+    "build": "rimraf dist && vite build --config scripts/es.build.ts && pnpm run build:tsc-es",
+    "build:tsc-es": "tsc --emitDeclarationOnly -d -p ./tsconfig.build.json --outDir dist/es/",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "files": [
+    "dist/es",
+    "dist/types",
+    "dist/umd"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "cross-env": "^7.0.3",
+    "vite-plugin-dts": "^3.9.1",
+    "vitest": "^1.6.0"
+  },
+  "dependencies": {
+    "classnames": "^2.5.1"
+  }
+}
