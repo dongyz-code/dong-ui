@@ -11,7 +11,8 @@
   ],
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "dev": "pnpm -C packages/docs build",
+    "dev": "pnpm -C packages/components dev",
+    "docs:dev": "pnpm -C packages/docs storybook",
     "build:components": "pnpm -C packages/components build"
   },
   "dependencies": {

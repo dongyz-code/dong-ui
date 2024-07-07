@@ -1,5 +1,97 @@
+@import './var.scss';
+
+// basic button styles
 .#{$prefix}-btn {
   display: inline-block;
-  line-height: 1.5;
+  line-height: 2;
   white-space: nowrap;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid var(--border-color-base);
+  border-radius: var(--border-radius-base);
+  padding: 4px 16px;
+  outline: none;
+  color: var(--text-color-base);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  background-color: transparent;
+
+  &:hover {
+    background-color: var(--bg-color-hover);
+    border-color: var(--border-color-hover);
+    color: var(--text-color-hover);
+  }
+
+  & + .#{$prefix}-btn {
+    margin-left: 12px;
+  }
+
+  &.#{$prefix}-btn-danger {
+    color: var(--danger-color);
+    &:hover {
+      border-color: var(--danger-color-hover);
+      color: var(--danger-color-hover);
+    }
+  }
+}
+
+// primary button styles
+.#{$prefix}-btn.#{$prefix}-btn-primary {
+  background-color: var(--primary-color);
+  color: #fff;
+
+  &:hover {
+    background-color: var(--primary-color-hover);
+    color: #fff;
+  }
+
+  &.#{$prefix}-btn-danger {
+    background-color: var(--danger-color);
+    color: #fff;
+
+    &:hover {
+      background-color: var(--danger-color-hover);
+    }
+  }
+}
+
+// hover button styles
+.#{$prefix}-btn.#{$prefix}-btn-dashed {
+  border-style: dashed;
+}
+
+// text button styles
+.#{$prefix}-btn.#{$prefix}-btn-text {
+  border: none;
+  &:hover {
+    color: var(--text-color-base);
+    background-color: var(--bg-hover-color-light);
+    border: none;
+  }
+
+  &.#{$prefix}-btn-danger {
+    &:hover {
+      color: var(--danger-color-hover);
+      background-color: var(--danger-color-hover-1);
+    }
+  }
+}
+
+// link button styles
+.#{$prefix}-btn.#{$prefix}-btn-link {
+  border: none;
+  color: var(--primary-color);
+  &:hover {
+    color: var(--text-color-hover);
+    background-color: transparent;
+    border: none;
+  }
+
+  &.#{$prefix}-btn-danger {
+    color: var(--danger-color);
+
+    &:hover {
+      color: var(--danger-color-hover);
+    }
+  }
 }

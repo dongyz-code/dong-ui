@@ -2,7 +2,7 @@ import type { CSSProperties, HTMLProps, ReactNode, AnchorHTMLAttributes, MouseEv
 
 export interface BasicButtonProps {
   style?: CSSProperties;
-  classNames?: string | string[];
+  className?: string | string[];
   children?: ReactNode;
 
   /**
