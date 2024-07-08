@@ -2,14 +2,20 @@ import React from 'react';
 import Button from './Button';
 
 export default function App() {
+  function handleClick() {
+    alert('Button clicked');
+  }
+
   return (
     <>
       <div style={{ padding: '20px' }}>
-        <Button>Hello World</Button>
+        <Button onClick={handleClick}>Hello World</Button>
         <Button type={'primary'}>Hello World</Button>
         <Button type={'dashed'}>Hello World</Button>
         <Button type={'text'}>Hello World</Button>
-        <Button type={'link'}>Hello World</Button>
+        <Button type={'link'} href={'https://www.google.com'}>
+          Hello World
+        </Button>
       </div>
       <div style={{ padding: '20px' }}>
         <Button danger>Hello World</Button>
@@ -28,7 +34,9 @@ export default function App() {
       </div>
 
       <div style={{ padding: '20px' }}>
-        <Button disabled>Hello World</Button>
+        <Button onClick={handleClick} disabled>
+          Hello World
+        </Button>
         <Button disabled type={'primary'}>
           Hello World
         </Button>
@@ -41,6 +49,20 @@ export default function App() {
         <Button disabled type={'link'}>
           Hello World
         </Button>
+      </div>
+
+      <div style={{ padding: '20px' }}>
+        <Button size={'small'}>Hello World</Button>
+        <Button size={'medium'}>Hello World</Button>
+        <Button size={'large'}>Hello World</Button>
+      </div>
+
+      <div style={{ padding: '20px' }}>
+        <Button block>Hello World</Button>
+      </div>
+
+      <div style={{ padding: '20px' }}>
+        <Button loading>Hello World</Button>
       </div>
     </>
   );

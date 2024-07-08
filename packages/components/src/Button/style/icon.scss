@@ -1,0 +1,17 @@
+.#{$prefix}-btn-icon {
+  margin-right: 4px;
+  position: relative;
+
+  &.#{$prefix}-btn-icon-loading svg {
+    animation: btn-loading-spin 1s infinite linear;
+  }
+}
+
+@keyframes btn-loading-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}

@@ -1,4 +1,11 @@
-import type { CSSProperties, HTMLProps, ReactNode, AnchorHTMLAttributes, MouseEventHandler } from 'react';
+import type {
+  CSSProperties,
+  HTMLProps,
+  ReactNode,
+  AnchorHTMLAttributes,
+  MouseEventHandler,
+  ButtonHTMLAttributes,
+} from 'react';
 
 export interface BasicButtonProps {
   style?: CSSProperties;
@@ -29,6 +36,11 @@ export interface BasicButtonProps {
    * 按钮类型
    */
   type?: 'default' | 'primary' | 'dashed' | 'text' | 'link';
+
+  /**
+   * HTML 原生按钮类型
+   */
+  htmlType?: ButtonHTMLAttributes<HTMLButtonElement>['type'];
 
   /**
    * 按钮尺寸

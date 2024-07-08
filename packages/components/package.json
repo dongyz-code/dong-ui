@@ -28,6 +28,7 @@
     "vitest": "^1.6.0"
   },
   "dependencies": {
+    "@icon-park/react": "^1.4.2",
     "classnames": "^2.5.1"
   }
 }
