@@ -19,6 +19,12 @@ export function useMergeValue<T>(
   const { defaultValue, value: propsValue, onChange } = props;
   const isFirstRender = useRef(true);
 
+  /**
+   * First render; initialize stateValue
+   * If props.value is provided, use it as the initial state.
+   * If props.defaultValue is provided, use it as the initial state.
+   * Otherwise, use the defaultStateValue as the initial state.
+   */
   const [stateValue, setStateValue] = useState(() => {
     if (propsValue !== undefined) {
       return propsValue;
@@ -43,6 +49,10 @@ export function useMergeValue<T>(
   );
 
   useEffect(() => {
+    /**
+     * If props.value is provided, update stateValue.
+     * This is to ensure that the stateValue is always in sync with props.value.
+     */
     if (propsValue === undefined && !isFirstRender.current) {
       setStateValue(propsValue!);
     }

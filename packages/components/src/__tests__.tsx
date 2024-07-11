@@ -9,14 +9,22 @@ export default function App() {
   }
 
   const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(event.target.value);
     setValue(event.target.value);
   };
 
   return (
     <>
       <div>
-        <Input value={value} onChange={onInputChange}></Input>
+        <Input value={value} onChange={onInputChange} maxLength={10} placeholder="请输入"></Input>
+        <Input
+          value={value}
+          autoFocus
+          onChange={onInputChange}
+          maxLength={10}
+          size={'small'}
+          placeholder="请输入"
+        ></Input>
+        <Input value={value} onChange={onInputChange} maxLength={10} size={'large'} placeholder="请输入"></Input>
       </div>
       <div style={{ padding: '20px' }}>
         <Button onClick={handleClick}>Hello World</Button>

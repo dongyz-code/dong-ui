@@ -6,6 +6,7 @@ import type {
   MouseEventHandler,
   ButtonHTMLAttributes,
 } from 'react';
+import { BasicSize } from '../types';
 
 export interface BasicButtonProps {
   style?: CSSProperties;
@@ -45,7 +46,7 @@ export interface BasicButtonProps {
   /**
    * 按钮尺寸
    */
-  size?: 'large' | 'medium' | 'small';
+  size?: BasicSize;
 
   /**
    * 按钮形状

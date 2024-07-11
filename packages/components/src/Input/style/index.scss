@@ -1,0 +1,38 @@
+@import './mixin';
+
+.#{$prefix}-input {
+  line-height: 22px;
+  border-radius: var(--border-radius-base);
+  border: 1px solid var(--border-color-base);
+  transition:
+    border-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+  font-size: 14px;
+  color: var(--text-color-base);
+  font-family: var(--font-family);
+  width: 222px;
+
+  &:not(.#{$prefix}-input-disabled):hover {
+    @include btn-hover-focus-active;
+  }
+
+  &:focus {
+    @include btn-hover-focus-active;
+  }
+
+  &:focus-visible {
+    @include btn-hover-focus-active;
+  }
+}
+
+.#{$prefix}-input-large {
+  padding: 8px 16px;
+}
+
+.#{$prefix}-input-medium {
+  padding: 6px 12px;
+}
+
+.#{$prefix}-input-smapp {
+  padding: 2px 4px;
+}
