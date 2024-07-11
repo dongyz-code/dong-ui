@@ -40,6 +40,7 @@ const Input: React.FC<InputProps> = (props) => {
   return (
     <input
       style={style}
+      disabled={disabled}
       className={_className}
       value={inputValue}
       onChange={onChange}

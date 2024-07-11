@@ -15,7 +15,7 @@ export default function App() {
   return (
     <>
       <div>
-        <Input value={value} onChange={onInputChange} maxLength={10} placeholder="请输入"></Input>
+        <Input value={value} disabled onChange={onInputChange} maxLength={10} placeholder="请输入"></Input>
         <Input
           value={value}
           autoFocus

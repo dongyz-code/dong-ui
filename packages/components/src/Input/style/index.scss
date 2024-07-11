@@ -33,6 +33,11 @@
   padding: 6px 12px;
 }
 
-.#{$prefix}-input-smapp {
+.#{$prefix}-input-small {
   padding: 2px 4px;
+}
+
+.#{$prefix}-input-disabled {
+  cursor: not-allowed;
+  background-color: var(--bg-color-disabled);
 }
