@@ -1,16 +1,19 @@
 import React from 'react';
 import Button from './Button';
 import Input from './Input';
+import Modal from './Modal';
 
 export default function App() {
   const [value, setValue] = React.useState('');
   function handleClick() {
-    alert('Button clicked');
+    setOpen(true);
   }
 
   const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
   };
+
+  const [open, setOpen] = React.useState(false);
 
   return (
     <>
@@ -82,6 +85,12 @@ export default function App() {
       <div style={{ padding: '20px' }}>
         <Button loading>Hello World</Button>
       </div>
+
+      <Modal open={open} onCancel={() => setOpen(false)} onOk={() => setOpen(false)} title="Basic Modal">
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Modal>
     </>
   );
 }
