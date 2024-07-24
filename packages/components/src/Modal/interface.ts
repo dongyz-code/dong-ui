@@ -11,6 +11,9 @@ export type ModalProps = {
   /** 点击Esc时是否可关闭 */
   keyboard?: boolean;
 
+  /** mask是否可见 */
+  mask?: boolean;
+
   /** 点击蒙层是否可关闭 */
   maskClosable?: boolean;
 
@@ -38,3 +41,5 @@ export type ModalProps = {
   /** 点击确定按钮的回调 */
   onOk?: () => void;
 };
+
+export type MousePosition = { x: number; y: number } | null;

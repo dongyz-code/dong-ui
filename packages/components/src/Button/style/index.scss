@@ -3,13 +3,13 @@
 // basic button styles
 .#{$prefix}-btn {
   display: inline-block;
-  line-height: 2;
+  line-height: 1.5;
   white-space: nowrap;
   text-align: center;
   cursor: pointer;
   border: 1px solid var(--border-color-base);
   border-radius: var(--border-radius-base);
-  padding: 4px 16px;
+  padding: 4px 15px;
   outline: none;
   color: var(--text-color-base);
   font-family: var(--font-family);

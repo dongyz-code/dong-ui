@@ -1,0 +1,111 @@
+.#{$prefix}-modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  color: var(--text-color-base);
+  font-family: var(--font-family);
+}
+
+.#{$prefix}-modal-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: var(--index-popup-index);
+  background-color: var(--modal-mask-bg);
+
+  /* 定义进入时的过渡动画 */
+  &.fade-mask-enter {
+    opacity: 0;
+  }
+  &.fade-mask-enter-active {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  &.fade-mask-exit {
+    opacity: 1;
+  }
+  &.fade-mask-exit-active {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+}
+
+.#{$prefix}-modal {
+  position: relative;
+  top: 100px;
+  margin: 0 auto;
+  z-index: var(--index-popup-index);
+  box-shadow: var(--modal-box-shadow);
+  border-radius: var(--border-radius-base);
+  background-color: var(--white-color);
+  padding: 24px;
+
+  &.zoom-modal-enter,
+  &.zoom-modal-appear {
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+  }
+
+  &.zoom-modal-enter-active,
+  &.zoom-modal-appear-active {
+    opacity: 1;
+    transform: scale(1, 1);
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  &.zoom-modal-exit {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+
+  &.zoom-modal-exit-active {
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
+  }
+}
+
+.#{$prefix}-modal-close {
+  display: flex;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+  color: var(--secondary-color);
+  padding: 4px;
+  border-radius: var(--border-radius-base);
+
+  &:hover {
+    color: var(--text-color-base);
+    background-color: var(--modal-mask-bg);
+  }
+}
+
+.#{$prefix}-modal-header {
+  .#{$prefix}-modal-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+}
+
+.#{$prefix}-modal-body {
+  font-size: 14px;
+}
+
+.#{$prefix}-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+}

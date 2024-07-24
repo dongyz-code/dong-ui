@@ -34,8 +34,8 @@ export default function App() {
         <Button type={'primary'}>Hello World</Button>
         <Button type={'dashed'}>Hello World</Button>
         <Button type={'text'}>Hello World</Button>
-        <Button type={'link'} href={'https://www.google.com'}>
-          Hello World
+        <Button type={'link'} href={'https://www.google.com'} target={'_blank'}>
+          Link
         </Button>
       </div>
       <div style={{ padding: '20px' }}>
