@@ -99,7 +99,6 @@ const Modal: React.FC<ModalProps> = ({
     <div>
       <div>
         {/* 蒙层 */}
-
         <CSSTransition in={open && mask} appear timeout={300} unmountOnExit classNames="fade-mask">
           <div className={`${prefixCls}-modal-mask`} onClick={handleClickMask}></div>
         </CSSTransition>
