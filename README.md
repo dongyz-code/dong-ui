@@ -1,30 +1,52 @@
-# React + TypeScript + Vite
+# @dong-ui/components
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React自建组件库，用来帮助学习React和封装一些常用的组件。
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 基于Vite+React+TypeScript+ESLint+Prettier的React组件库开发环境
+- 封装常用组件，提高开发效率
+- 提供组件库文档，帮助开发者快速上手
 
-## Expanding the ESLint configuration
+## 依赖包
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- React18
+- react-transition-group
+- Vite5
+- TypeScript5
+- ESLint8
+- Prettier9
 
-- Configure the top-level `parserOptions` property like this:
+## getting started
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+### install
+
+需要同时安装 react >= 18 和 react-dom >= 18。
+
+```bash
+// npm
+npm install dongui
+
+// pnpm
+pnpm add dongui
+
+// yarn
+yarn add dongui
+
+
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### use
+
+```jsx
+import { Button } from '@dong-ui/components';
+import 'dongui/dist/es/Button/index.css';
+
+function App() {
+  return (
+    <div>
+      <Button>Hello DongUi</Button>
+    </div>
+  );
+}
+```

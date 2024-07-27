@@ -3,7 +3,6 @@ import Button from './Button';
 import Input from './Input';
 import Modal from './Modal';
 import Calendar from './Calendar';
-import dayjs from "dayjs";
 
 export default function App() {
   const [value, setValue] = React.useState('');
@@ -19,8 +18,8 @@ export default function App() {
 
   return (
     <>
-      <div style={{ padding: '20px' }}>
-        <Calendar value={dayjs('2024-6-10')} />
+      <div style={{ padding: '20px', width: '900px' }}>
+        <Calendar />
       </div>
 
       <div>

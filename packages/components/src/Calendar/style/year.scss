@@ -1,0 +1,30 @@
+.#{$prefix}-calendar-year {
+  border-top: 1px solid var(--border-color-base);
+}
+
+.#{$prefix}-calendar-year-month-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.#{$prefix}-calendar-year-month {
+  flex: 1;
+  display: flex;
+  height: 120px;
+  padding: 10px;
+  cursor: pointer;
+  border-right: 1px solid var(--border-color-base);
+  border-bottom: 1px solid var(--border-color-base);
+  transition: background-color 0.3s ease;
+
+  &:last-child {
+    border-right: none;
+  }
+
+  &:hover:not(.#{$prefix}-calendar-year-month-disabled) {
+    background-color: var(--bg-hover-color-light);
+  }
+
+  .#{$prefix}-calendar-year-month-disabled {
+  }
+}

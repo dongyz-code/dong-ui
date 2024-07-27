@@ -1,0 +1,66 @@
+.#{$prefix}-calendar-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+}
+
+.#{$prefix}-calendar-header-left {
+  display: flex;
+  align-items: center;
+
+  .#{$prefix}-calendar-header-left-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 140px;
+    margin-right: 32px;
+
+    .#{$prefix}-calendar-header-left-prev,
+    .#{$prefix}-calendar-header-left-next {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      font-size: 16px;
+      border-radius: 50%;
+      line-height: 24px;
+
+      &:hover {
+        background-color: var(--bg-hover-color-light);
+      }
+    }
+  }
+
+  .#{$prefix}-calendar-header-left-today {
+    padding: 0 12px;
+    font-size: 14px;
+    line-height: 24px;
+    background-color: var(--bg-color-light);
+
+    &:hover {
+      background-color: var(--bg-hover-color-light);
+    }
+  }
+}
+
+.#{$prefix}-calendar-header-right {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-color-light);
+  padding: 4px;
+
+  .#{$prefix}-calendar-header-right-btn {
+    padding: 0 12px;
+    margin-right: 4px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover,
+    &.#{$prefix}-calendar-header-right-btn-active {
+      background-color: var(--white-color);
+    }
+  }
+}

@@ -1,0 +1,78 @@
+.#{$prefix}-calendar-month {
+  border-top: 1px solid var(--border-color-base);
+  font-weight: 500;
+}
+
+.#{$prefix}-calendar-month-week {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+
+  &:last-child {
+    .#{$prefix}-calendar-month-day {
+      border-bottom: none;
+    }
+  }
+}
+
+.#{$prefix}-calendar-month-day {
+  flex: 1;
+  height: 100%;
+  padding: 10px;
+  cursor: pointer;
+  border-right: 1px solid var(--border-color-base);
+  border-bottom: 1px solid var(--border-color-base);
+  transition: background-color 0.3s ease;
+  color: var(--text-color-gray);
+
+  &:last-child {
+    border-right: none;
+  }
+
+  &:hover:not(.#{$prefix}-calendar-day-disabled) {
+    background-color: var(--bg-hover-color-light);
+  }
+
+  &.#{$prefix}-calendar-day-in-month {
+    color: var(--text-color-base);
+  }
+
+  &.#{$prefix}-calendar-day-disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  &.#{$prefix}-calendar-day-today {
+    .#{$prefix}-calendar-month-day-number-circle {
+      border-color: var(--primary-color);
+    }
+  }
+
+  &.#{$prefix}-calendar-day-selected {
+    color: var(--white-color);
+    .#{$prefix}-calendar-month-day-number-circle {
+      background-color: var(--primary-color);
+    }
+  }
+}
+
+.#{$prefix}-calendar-month-day-number {
+  display: flex;
+}
+
+.#{$prefix}-calendar-month-day-number-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  border: 1px solid transparent;
+}
+
+.#{$prefix}-calendar-month-day-content {
+  height: calc(100% - 20px);
+}

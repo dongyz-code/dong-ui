@@ -8,7 +8,7 @@ export interface CalendarProps {
   style?: React.CSSProperties;
 
   /** 自定义单元格内容 */
-  cellRender?: (current: Dayjs, today: Dayjs) => React.ReactNode;
+  cellRender?: (current: Dayjs, today: boolean) => React.ReactNode;
 
   /** 默认展示的日期 */
   defaultValue?: CalendarDate;
@@ -17,7 +17,7 @@ export interface CalendarProps {
   value?: CalendarDate;
 
   /** 日期变化回调 */
-  onChange?: boolean;
+  onChange?: (current: Dayjs) => void;
 
   /** 日期范围 */
   dateRange?: [CalendarDate, CalendarDate];
@@ -29,7 +29,12 @@ export interface CalendarProps {
   fullscreen?: boolean;
 
   /** 自定义头部内容 */
-  headerRender?: () => React.ReactNode;
+  headerRender?: (props: {
+    current: Dayjs;
+    onCurrentChange: (current: Dayjs) => void;
+    panelMode: CalendarProps['panelMode'];
+    onChangeMode: CalendarProps['onPanelChange'];
+  }) => React.ReactNode;
 
   /** 选择日期回调 */
   onSelect?: (current: Dayjs) => void;

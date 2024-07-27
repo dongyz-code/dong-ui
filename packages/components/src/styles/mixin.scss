@@ -1,0 +1,16 @@
+@mixin button-reset {
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+    text-align: inherit;
+    text-decoration: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+  }
+}

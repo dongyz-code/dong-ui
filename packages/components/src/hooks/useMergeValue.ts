@@ -45,7 +45,7 @@ export function useMergeValue<T>(
       }
       onChange?.(res);
     },
-    [stateValue]
+    [stateValue, propsValue, onChange]
   );
 
   useEffect(() => {
