@@ -15,8 +15,8 @@ let mousePosition: MousePosition;
 
 const getMousePosition = (e: MouseEvent) => {
   mousePosition = {
-    x: e.clientX,
-    y: e.clientY,
+    x: e.clientX + window.pageXOffset,
+    y: e.clientY + window.pageYOffset,
   };
 
   /** 受控模式下，用户不一定马上打开弹框，那这个位置就不可用 */

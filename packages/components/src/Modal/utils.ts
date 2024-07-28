@@ -5,8 +5,8 @@ export function getOffset(el?: HTMLElement | null) {
   const rect = el.getBoundingClientRect();
 
   const position = {
-    left: rect.left,
-    top: rect.top,
+    left: rect.left + rect.width / 2,
+    top: rect.top + rect.height / 2,
   };
 
   const window = el.ownerDocument.defaultView;
