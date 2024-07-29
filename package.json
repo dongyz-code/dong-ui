@@ -7,13 +7,15 @@
     "node": "18.2.0"
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "playground"
   ],
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "dev": "pnpm -C packages/components dev",
     "docs:dev": "pnpm -C packages/docs storybook",
-    "build:components": "pnpm -C packages/components build"
+    "build:components": "pnpm -C packages/components build",
+    "playground": "pnpm -C playground dev"
   },
   "dependencies": {
     "@dong-ui/components": "workspace:*",
