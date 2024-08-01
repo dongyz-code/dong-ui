@@ -7,7 +7,7 @@ import 'allotment/dist/style.css';
 
 const Index = () => {
   return (
-    <div style={{ height: '100vh' }}>
+    <div className="h-[100vh]">
       <Header />
       <Allotment defaultSizes={[1, 1]}>
         <Allotment.Pane minSize={500}>
