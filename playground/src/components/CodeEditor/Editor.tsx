@@ -37,9 +37,9 @@ const CodeEditor = () => {
   return (
     <Editor
       height="100%"
-      language="typescript"
+      language={file.language}
       value={file.value}
-      path={'APP.tsx'}
+      path={file.name}
       onMount={handleEditorMont}
       onChange={onEditorChange}
       options={{

@@ -15,7 +15,7 @@ const helper = <T extends string>(names: T[]) => {
   return result;
 };
 
-const FileNames = helper(['App.tsx', 'main.tsx', 'App.css', 'import-map.json']);
+export const FileNames = helper(['App.tsx', 'main.tsx', 'App.css', 'import-map.json']);
 
 export const defaultFiles: Files = {
   [FileNames['main.tsx']]: {
