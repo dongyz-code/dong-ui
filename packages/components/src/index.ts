@@ -6,3 +6,6 @@ export { default as Input } from './Input/index';
 
 export type { ModalProps } from './Modal/interface';
 export { default as Modal } from './Modal/index';
+
+export type { CalendarProps } from './Calendar/interface';
+export { default as Calendar } from './Calendar/index';

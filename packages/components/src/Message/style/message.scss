@@ -1,0 +1,25 @@
+.message-wrapper {
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.message-enter {
+  opacity: 0;
+  transform: scale(1.1);
+}
+
+.message-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
+}
+
+.message-exit {
+  opacity: 1;
+}
+
+.message-exit-active {
+  opacity: 0;
+  transition: opacity 1s ease;
+}

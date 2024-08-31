@@ -3,8 +3,11 @@ import Button from './Button';
 import Input from './Input';
 import Modal from './Modal';
 import Calendar from './Calendar';
+import { useMessage } from './Message/useMessage';
+import ConfigProvider from './ConfigProvider';
 
-export default function App() {
+const Play = () => {
+  const messageRef = useMessage();
   const [value, setValue] = React.useState('');
   function handleClick() {
     setOpen(true);
@@ -18,6 +21,19 @@ export default function App() {
 
   return (
     <>
+      <div>
+        <Button
+          type={'primary'}
+          onClick={() =>
+            messageRef.add({
+              content: 'Hello World',
+              type: 'success',
+            })
+          }
+        >
+          Hello World
+        </Button>
+      </div>
       <div style={{ padding: '20px', width: '900px' }}>
         <Calendar />
       </div>
@@ -97,5 +113,13 @@ export default function App() {
         <p>Some contents...</p>
       </Modal>
     </>
+  );
+};
+
+export default function App() {
+  return (
+    <ConfigProvider>
+      <Play />
+    </ConfigProvider>
   );
 }

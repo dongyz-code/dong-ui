@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { usePlayground } from '../Playground/PlaygroundContext';
-import { Editor } from '@monaco-editor/react';
 import { compile } from './compiler';
 import iframeRaw from './iframe.html?raw';
 import { FileNames } from '../Playground/files';
