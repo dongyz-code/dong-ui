@@ -5,6 +5,7 @@ import Modal from './Modal';
 import Calendar from './Calendar';
 import { useMessage } from './Message/useMessage';
 import ConfigProvider from './ConfigProvider';
+import { Watermark } from './Watermark';
 
 const Play = () => {
   const messageRef = useMessage();
@@ -20,7 +21,7 @@ const Play = () => {
   const [open, setOpen] = React.useState(false);
 
   return (
-    <>
+    <Watermark content="yuzhong.dong">
       <div>
         <Button
           type={'primary'}
@@ -112,7 +113,7 @@ const Play = () => {
         <p>Some contents...</p>
         <p>Some contents...</p>
       </Modal>
-    </>
+    </Watermark>
   );
 };
 
