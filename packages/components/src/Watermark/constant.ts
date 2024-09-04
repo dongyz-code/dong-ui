@@ -3,9 +3,9 @@ import type { WatermarkOptions } from './interface';
 export const DEFAULT_WATERMARK_OPTIONS: WatermarkOptions = {
   rotate: -20,
   zIndex: 1,
-  width: 100,
-  height: 100,
-  gap: [0, 0],
+  // width: 100,
+  // height: 100,
+  gap: [20, 20],
   fontStyle: {
     fontFamily: 'sans-serif',
     fontWeight: 'normal',

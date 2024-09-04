@@ -21,7 +21,7 @@ const Play = () => {
   const [open, setOpen] = React.useState(false);
 
   return (
-    <Watermark content="yuzhong.dong">
+    <Watermark content={['yuzhong.dong']}>
       <div>
         <Button
           type={'primary'}

@@ -1,14 +1,13 @@
 import type { WatermarkOptions } from './interface';
 
-function measureTextSize(ctx: CanvasRenderingContext2D, text: string | string[], rotate: number) {
+function measureTextSize(ctx: CanvasRenderingContext2D, lines: string[], rotate: number) {
   let width = 0;
   let height = 0;
   const angle = (rotate * Math.PI) / 180;
-  const lines = typeof text === 'string' ? [text] : text;
 
   const lineSize = lines.map((text) => {
     const metrics = ctx.measureText(text);
-    const textHeight = metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent;
+    const textHeight = metrics.fontBoundingBoxAscent + metrics.fontBoundingBoxDescent;
 
     if (metrics.width > width) {
       width = metrics.width;
@@ -41,7 +40,6 @@ export function drawWatermark({
   if (!container) {
     return;
   }
-
   const canvas = document.createElement('canvas');
   const ctx = canvas.getContext('2d')!;
 
@@ -49,7 +47,7 @@ export function drawWatermark({
     throw new Error('Failed to get canvas context');
   }
 
-  const { content = '', image, fontStyle, gap, rotate } = options;
+  const { content = [], image, fontStyle, gap, rotate } = options;
   const ratio = window.devicePixelRatio || 1;
 
   function resizeCanvas(itemStyle: { width: number; height: number }) {
@@ -69,7 +67,7 @@ export function drawWatermark({
 
   async function drawText() {
     const { fontFamily, fontWeight, fontSize, color } = fontStyle!;
-    const measureSize = measureTextSize(ctx, [...content], rotate!);
+    const measureSize = measureTextSize(ctx, content, rotate!);
     const width = options.width || measureSize.width;
     const height = options.height || measureSize.height;
 
@@ -79,13 +77,14 @@ export function drawWatermark({
     ctx.fillStyle = color!;
     ctx.textAlign = 'left';
     ctx.textBaseline = 'top';
-
+    // 在行宽的一半的地方开始绘制文字，行内每个文字的位置是行高的一半 * index。
     for (let i = 0; i < content!.length; i++) {
       const text = content![i];
       const lineSize = measureSize.lineSize[i];
       const x = -lineSize.width / 2;
       const y = -measureSize.height / 2 + lineSize.height * i;
-      ctx.fillText(text, x, y);
+
+      ctx.fillText(text, x, y, options.width || measureSize.originalWidth);
     }
 
     return { base64Url: canvas.toDataURL(), width, height };

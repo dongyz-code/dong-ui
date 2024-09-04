@@ -20,7 +20,7 @@ export interface WatermarkProps extends React.PropsWithChildren {
   };
 
   /** 水印文字内容 */
-  content?: string;
+  content?: string[];
 
   /** 图片源，优先级高于content */
   image?: string;
