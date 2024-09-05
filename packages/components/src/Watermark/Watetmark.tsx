@@ -46,12 +46,11 @@ const Watermark: React.FC<WatermarkProps> = ({
   }, [content, image, fontStyle, width, height, rotate, gap, zIndex]);
 
   return (
-    <div ref={containerRef} style={style} className={classsName}>
+    <div ref={containerRef} style={{ ...style, position: 'relative' }} className={classsName}>
+      {children}
       <div
         style={{
           position: 'absolute',
-          width: '100%',
-          height: '100%',
           top: 0,
           left: 0,
           right: 0,
@@ -63,9 +62,7 @@ const Watermark: React.FC<WatermarkProps> = ({
           backgroundRepeat: 'repeat',
           backgroundImage: `url(${base64})`,
         }}
-      >
-        {children}
-      </div>
+      ></div>
     </div>
   );
 };
