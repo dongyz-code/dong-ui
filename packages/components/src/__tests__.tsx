@@ -6,6 +6,7 @@ import Calendar from './Calendar';
 import { useMessage } from './Message/useMessage';
 import ConfigProvider from './ConfigProvider';
 import { Watermark } from './Watermark';
+import { Lazyload } from './Lazyload';
 
 const Play = () => {
   const messageRef = useMessage();
@@ -108,6 +109,9 @@ const Play = () => {
         <Button loading>Hello World</Button>
       </div>
 
+      <Lazyload placeholder="图片" height={200}>
+        <img src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png" alt="" srcSet="" />
+      </Lazyload>
       <Modal open={open} onCancel={() => setOpen(false)} onOk={() => setOpen(false)} title="Basic Modal">
         <p>Some contents...</p>
         <p>Some contents...</p>
