@@ -7,6 +7,7 @@ import { useMessage } from './Message/useMessage';
 import ConfigProvider from './ConfigProvider';
 import { Watermark } from './Watermark';
 import { Lazyload } from './Lazyload';
+import { Form } from './Form';
 
 const Play = () => {
   const messageRef = useMessage();
@@ -23,6 +24,14 @@ const Play = () => {
 
   return (
     <Watermark content={['yuzhong.dong']} gap={[100, 100]}>
+      <Form>
+        <Form.Item label="用户名" name="username">
+          <Input />
+        </Form.Item>
+        <Form.Item label="密码" name="password">
+          <Input />
+        </Form.Item>
+      </Form>
       <div>
         <Button
           type={'primary'}

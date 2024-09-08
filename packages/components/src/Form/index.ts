@@ -12,5 +12,4 @@ const Form = InternalForm as FormInterface;
 
 Form.Item = FormItem;
 
-export default Form;
-export { FormProps, FormItemProps };
+export { Form, FormProps, FormItemProps };
