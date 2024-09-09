@@ -1,9 +1,11 @@
 import React, { useRef, useState } from 'react';
 import { FormContext } from './FormContext';
+import classNames from 'classnames';
+import useConfig from '../hooks/useConfig';
+
+import './style/form.scss';
 
 import type { FormProps } from './interface';
-import classNames from 'classnames';
-import useConfig from 'src/hooks/useConfig';
 
 const Form: React.FC<FormProps> = ({
   children,
@@ -26,6 +28,7 @@ const Form: React.FC<FormProps> = ({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
+    console.log('values', validateMap.current);
     for (const [key, validator] of validateMap.current) {
       if (typeof validator === 'function') {
         errors.current[key] = validator(values[key]);

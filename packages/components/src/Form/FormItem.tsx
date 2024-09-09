@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import Schema from 'async-validator';
 import { FormItemProps } from './interface';
 import { FormContext } from './FormContext';
-import useConfig from 'src/hooks/useConfig';
+import useConfig from '../hooks/useConfig';
 import { getValueFromEvent } from './utils';
 
 const FormItem: React.FC<FormItemProps> = ({
@@ -14,6 +14,8 @@ const FormItem: React.FC<FormItemProps> = ({
   label,
   rules,
   children,
+  required = false,
+  colon = true,
 }) => {
   const { prefixCls } = useConfig();
   const [value, setValue] = useState<string | number | boolean>();
@@ -61,10 +63,8 @@ const FormItem: React.FC<FormItemProps> = ({
   })();
 
   useEffect(() => {
-    if (name) {
-      if (value !== values?.[name]) {
-        setValue(values?.[name]);
-      }
+    if (name && value !== values?.[name]) {
+      setValue(values?.[name]);
     }
   }, [values]);
 
@@ -76,9 +76,23 @@ const FormItem: React.FC<FormItemProps> = ({
 
   return (
     <div className={classNames(`${prefixCls}-form-item`, className)} style={style}>
-      {label && <label className={`${prefixCls}-form-item-label`}>{label}</label>}
-      {cloneChildren}
-      {error && <div className={`${prefixCls}-form-item-error`}>{error}</div>}
+      {label && (
+        <label className={`${prefixCls}-form-item-label`}>
+          <span
+            className={classNames(`${prefixCls}-form-item-label-text`, {
+              [`${prefixCls}-form-item-required`]: required,
+              [`${prefixCls}-form-item-colon`]: colon,
+            })}
+          >
+            {label}
+          </span>
+        </label>
+      )}
+
+      <div className={`${prefixCls}-form-item-control`}>
+        {cloneChildren}
+        {error && <div className={`${prefixCls}-form-item-error`}>{error}</div>}
+      </div>
     </div>
   );
 };

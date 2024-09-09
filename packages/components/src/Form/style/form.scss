@@ -1,0 +1,40 @@
+@import '../../styles/mixin.scss';
+
+.#{$prefix}-form {
+  @include base();
+}
+
+.#{$prefix}-form-item {
+  display: flex;
+
+  & + .#{$prefix}-form-item {
+    margin-top: 20px;
+  }
+}
+
+.#{$prefix}-form-item-label {
+  width: 200px;
+  text-align: right;
+  margin-right: 12px;
+}
+
+.#{$prefix}-form-item-label-text {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+
+  &.#{$prefix}-form-item-required {
+    &::before {
+      content: '*';
+      color: var(--danger-color);
+      margin-right: 2px;
+    }
+  }
+
+  &.#{$prefix}-form-item-colon {
+    &::after {
+      content: ':';
+      margin-left: 2px;
+    }
+  }
+}

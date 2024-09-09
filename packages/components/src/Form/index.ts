@@ -1,6 +1,6 @@
 import InternalForm from './Form';
 import FormItem from './FormItem';
-import { FormProps, FormItemProps } from './interface';
+import type { FormProps, FormItemProps } from './interface';
 
 type InternalFormType = typeof InternalForm;
 

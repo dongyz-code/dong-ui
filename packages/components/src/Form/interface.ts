@@ -24,4 +24,6 @@ export interface FormItemProps {
   rules?: Record<string, any>[];
   children: React.ReactElement;
   valuePropName?: string;
+  required?: boolean;
+  colon?: boolean;
 }

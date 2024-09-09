@@ -24,12 +24,18 @@ const Play = () => {
 
   return (
     <Watermark content={['yuzhong.dong']} gap={[100, 100]}>
-      <Form>
-        <Form.Item label="用户名" name="username">
+      <Form onFinish={(values) => console.log(values)}>
+        <Form.Item label="用户名" name="username" required>
           <Input />
         </Form.Item>
-        <Form.Item label="密码" name="password">
+        <Form.Item label="密码" name="password" rules={[{ required: true, message: '请输入密码' }]}>
           <Input />
+        </Form.Item>
+
+        <Form.Item label="密码" name="password">
+          <Button type="primary" htmlType="submit">
+            提交
+          </Button>
         </Form.Item>
       </Form>
       <div>
