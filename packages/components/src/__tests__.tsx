@@ -9,6 +9,33 @@ import { Watermark } from './Watermark';
 import { Lazyload } from './Lazyload';
 import { Form } from './Form';
 
+import { create } from './hooks/useStore';
+
+interface Store {
+  name: string;
+  age: number;
+  setName: (name: string) => void;
+  setAge: (age: number) => void;
+}
+
+const useStore = create<Store>((set) => ({
+  name: 'yuzhong.dong',
+  age: 25,
+  setName: (name: string) => set((state) => ({ ...state, name })),
+  setAge: (age: number) => set((state) => ({ ...state, age })),
+}));
+
+const Component1 = () => {
+  const age = useStore((state) => state.age);
+  return <div>{age}</div>;
+};
+
+const Component2 = () => {
+  const age = useStore((state) => state.age);
+  const setAge = useStore((state) => state.setAge);
+  return <Button onClick={() => setAge(age + 1)}>加一</Button>;
+};
+
 const Play = () => {
   const messageRef = useMessage();
   const [value, setValue] = React.useState('');
@@ -24,6 +51,10 @@ const Play = () => {
 
   return (
     <Watermark content={['yuzhong.dong']} gap={[100, 100]}>
+      <div>
+        <Component1 />
+        <Component2 />
+      </div>
       <Form onFinish={(values) => console.log(values)}>
         <Form.Item label="用户名" name="username" required>
           <Input />

@@ -1,4 +1,4 @@
-import { useSyncExternalStore } from 'react';
+import { useDebugValue, useSyncExternalStore } from 'react';
 
 type SetState<T extends Record<string, any>> = (partial: T | ((prevState: T) => T), replace?: boolean) => void;
 type GetState<T extends Record<string, any>> = () => T;
@@ -65,23 +65,26 @@ function useStore<T extends Record<string, any>, U>(api: StoreApi<T>, selector: 
   //   api.subscribe((state, prevState) => {
   //     const newObj = selector(state);
   //     const oldObj = selector(prevState);
-
   //     if (newObj !== oldObj) {
   //       forceRender(Math.random());
   //     }
   //   });
   // }, []);
+  // return selector(api.getState());
 
-  //使用useExternalState
+  // TODO: 使用useExternalState 这样返回值的时候就不能返回一个新对象，会导致无限循环
+  // 后面写一个useShallow
   function getState() {
     return selector(api.getState());
   }
-  return useSyncExternalStore(api.subscribe, getState);
+  const slice = useSyncExternalStore(api.subscribe, getState);
+  useDebugValue(slice);
+  return slice;
 }
 
 export function create<T extends Record<string, any>>(creteState: CreateState<T>) {
   const api = createStore(creteState);
   const useBoundStore = <U>(selector: StoreSelector<T, U>) => useStore(api, selector);
-  Object.assign(useBoundStore, api);
+  // Object.assign(useBoundStore, api);
   return useBoundStore;
 }
