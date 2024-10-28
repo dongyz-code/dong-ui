@@ -12,10 +12,12 @@
   ],
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "dev": "pnpm -C packages/components dev",
+    "dev": "pnpm turbo dev",
     "docs:dev": "pnpm -C packages/docs storybook",
     "build:components": "pnpm -C packages/components build",
-    "playground": "pnpm -C playground dev"
+    "playground": "pnpm -C playground dev",
+    "lint": "turbo lint",
+    "prettier": "prettier --write ."
   },
   "dependencies": {
     "@dong-ui/components": "workspace:*",
@@ -39,7 +41,12 @@
     "prettier": "^3.3.1",
     "sass": "^1.77.4",
     "tslib": "^2.6.3",
+    "turbo": "^2.2.3",
     "typescript": "^5.2.2",
     "vite": "^5.2.0"
+  },
+  "packageManager": "pnpm@9.4.0",
+  "engines": {
+    "node": ">=18.2.0"
   }
 }
