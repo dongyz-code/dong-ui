@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    /** 生成类型声明文件 */
+    "declaration": true,
+    /** 类型声明文件输出目录 */
+    "declarationDir": "dist/types",
+    /** 只生成类型声明文件 */
+    "emitDeclarationOnly": false,
+    /** 输出目录 */
+    "outDir": "dist",
+    /** 启用严格模式 */
+    "strict": true,
+    /** 模块解析策略 */
+    "esModuleInterop": true,
+    /** 跳过库的类型检查 */
+    "skipLibCheck": true,
+    /** JavaScript 版本目标 */
+    "target": "ESNext",
+    /** 使用 ES 模块 */
+    "module": "ESNext"
+  },
+  "include": ["core/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}

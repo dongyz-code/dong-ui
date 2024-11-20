@@ -1,0 +1,26 @@
+{
+  "name": "@dong-ui/animation",
+  "version": "1.0.0",
+  "description": "dong-ui animation",
+  "main": "dist/es/index.js",
+  "types": "dist/types/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "vite build && tsc",
+    "prebuild": "rimraf dist"
+  },
+  "keywords": [
+    "animation",
+    "tween",
+    "timeline",
+    "easing",
+    "dong-ui"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "vite": "^5.4.11",
+    "vite-plugin-dts": "^3.9.1"
+  }
+}

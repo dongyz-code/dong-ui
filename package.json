@@ -13,8 +13,6 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "dev": "pnpm turbo dev",
-    "docs:dev": "pnpm -C packages/docs storybook",
-    "build:components": "pnpm -C packages/components build",
     "playground": "pnpm -C playground dev",
     "lint": "turbo lint",
     "prettier": "prettier --write ."
