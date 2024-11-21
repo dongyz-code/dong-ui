@@ -19,6 +19,14 @@ const meta = {
       control: 'select',
       options: ['primary', 'text', 'dashed', 'link', 'default'],
     },
+    children: {
+      control: 'text',
+      defaultValue: 'Button',
+    },
+    disabled: {
+      control: 'boolean',
+      defaultValue: false,
+    },
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: {},
@@ -42,10 +50,10 @@ export const Secondary: Story = {
 
 export const Large: Story = {
   name: 'Large Button',
-  docs: {},
   decorators: [],
   args: {
     type: 'dashed',
+    children: 'Large Button',
   },
 };
 

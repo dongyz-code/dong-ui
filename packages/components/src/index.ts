@@ -10,4 +10,5 @@ export { default as Modal } from './Modal/index';
 export type { CalendarProps } from './Calendar/interface';
 export { default as Calendar } from './Calendar/index';
 
-export { useMessage, MessageProps } from './Message/index';
+export { useMessage } from './Message/index';
+export type { MessageProps } from './Message/interface';
