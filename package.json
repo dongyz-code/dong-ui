@@ -1,15 +1,11 @@
 {
   "name": "dong-ui",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "volta": {
     "node": "18.2.0"
   },
-  "workspaces": [
-    "packages/*",
-    "playground"
-  ],
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "dev": "pnpm turbo dev",
@@ -20,6 +16,7 @@
   "dependencies": {
     "@dong-ui/components": "workspace:*",
     "@dong-ui/docs": "workspace:*",
+    "@dong-ui/animation": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

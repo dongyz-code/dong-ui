@@ -1,12 +1,12 @@
 {
   "name": "@dong-ui/animation",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "dong-ui animation",
-  "main": "dist/es/index.js",
+  "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
   "type": "module",
   "scripts": {
-    "build": "vite build && tsc",
+    "build": "vite build",
     "prebuild": "rimraf dist"
   },
   "keywords": [

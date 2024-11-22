@@ -12,12 +12,14 @@
   "dependencies": {
     "@babel/core": "^7.24.9",
     "@babel/standalone": "^7.25.0",
+    "@dong-ui/animation": "workspace:*",
     "@monaco-editor/react": "^4.6.0",
     "@reactuses/core": "^5.0.19",
     "allotment": "^1.20.2",
     "classnames": "^2.5.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0",
     "react-use": "^17.5.1"
   },
   "devDependencies": {
@@ -35,7 +37,7 @@
     "eslint-plugin-react-refresh": "^0.4.7",
     "postcss": "^8.4.40",
     "tailwindcss": "^3.4.7",
-    "typescript": "^5.2.2",
+    "typescript": "^5.6.3",
     "vite": "^5.3.4"
   }
 }
